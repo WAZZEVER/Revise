@@ -16,7 +16,7 @@ import {
 } from "lucide-react"
 import  ThemeSwitch  from "@/components/ThemeSwitch"
 
-import { NavMain } from "@/components/nav-main"
+import { NavFavorites } from "@/components/nav-main"
 import { NavSec } from "@/components/nav-sec"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -33,12 +33,12 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "https://th.bing.com/th/id/OIP.JeGDOt3wdTdIwxU0lK-K5QHaHa?rs=1&pid=ImgDetMain",
   },
   NavSec: [
     {
-      title: "Search",
-      url: "#",
+      title: "Dashboard",
+      url: "/dashboard",
       icon: Search,
     },
     ],
@@ -63,71 +63,7 @@ const data = {
         },
       ],
     },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
+    
   ],
 }
 
@@ -144,11 +80,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-        <NavSec items={data.navMain} />
+        <NavSec items={data.NavSec} />
 
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavFavorites  />
+
       </SidebarContent>
       
     </Sidebar>
