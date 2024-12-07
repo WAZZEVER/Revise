@@ -6,6 +6,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import { createClient } from "@/utils/supabase/client";
+import  SectionPage  from "@/components/card-main"
+
 
 export default function PageDetails() {
   const [pageName, setPageName] = useState<string | null>(null);
@@ -13,6 +15,7 @@ export default function PageDetails() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const supabase = createClient();
+
 
   useEffect(() => {
     const fetchPageDetails = async () => {
@@ -75,11 +78,7 @@ export default function PageDetails() {
             </div>
           </header>
           <main>
-            <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-              <div className="px-4 py-6 sm:px-0">
-                <p className="text-muted-foreground">This is the content for "{pageName}".</p>
-              </div>
-            </div>
+            <SectionPage/>
           </main>
         </div>
       </SidebarInset>

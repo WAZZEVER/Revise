@@ -158,7 +158,7 @@ export function NavFavorites() {
 
   // Copy link to clipboard
   const copyLink = (id: string) => {
-    const fullUrl = `${window.location.origin}/page/${id}`;
+    const fullUrl = `${window.location.origin}/dashboard/${id}`;
     navigator.clipboard.writeText(fullUrl).then(() => {
       toast({
         title: "Link Copied",
@@ -176,7 +176,7 @@ export function NavFavorites() {
 
   // Open in new tab
   const openInNewTab = (id: string) => {
-    const fullUrl = `${window.location.origin}/page/${id}`;
+    const fullUrl = `${window.location.origin}/dashboard/${id}`;
     window.open(fullUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -198,7 +198,7 @@ export function NavFavorites() {
           <SidebarMenuItem key={item.id}>
             <SidebarMenuButton asChild>
               <a
-                href={`/page/${item.id}`}
+                href={`/dashboard/${item.id}`}
                 title={item.name}
                 onClick={() => updateAccessTimestamp(item.id)}
               >

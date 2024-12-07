@@ -24,7 +24,7 @@ export function RecentCard({ id, name, access, delay }: RecentCardProps) {
 
   // Handle navigation
   const handleNavigation = () => {
-    window.location.href = `/page/${id}`
+    window.location.href = `/dashboard/${id}`
   }
 
   return (
